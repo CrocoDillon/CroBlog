@@ -1,13 +1,12 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * CroBlog, Zend Framework 2 Blog module.
  *
- * @link      http://github.com/zendframework/ZendSkeletonModule for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @link      https://github.com/CrocoDillon/CroBlog
+ * @license   http://creativecommons.org/licenses/by/4.0/
  */
 
-namespace ZendSkeletonModule;
+namespace CroBlog;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
@@ -23,8 +22,7 @@ class Module implements AutoloaderProviderInterface
             ),
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-            // if we're in a namespace deeper than one level we need to fix the \ in the path
-                    __NAMESPACE__ => __DIR__ . '/src/' . str_replace('\\', '/' , __NAMESPACE__),
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
         );
@@ -37,8 +35,6 @@ class Module implements AutoloaderProviderInterface
 
     public function onBootstrap(MvcEvent $e)
     {
-        // You may not need to do this if you're doing it elsewhere in your
-        // application
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);

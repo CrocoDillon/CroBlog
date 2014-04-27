@@ -1,0 +1,27 @@
+{
+    "name": "crocodillon/cro-blog",
+    "description": "A Zend Framework 2 blog module.",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/CrocoDillon/CroBlog",
+    "authors": [
+        {
+            "name": "Dillon de Voor",
+            "email": "dillon@crocodillon.com",
+            "homepage": "http://crocodillon.com/"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "CroBlog": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
