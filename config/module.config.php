@@ -37,7 +37,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'cro-blog' => __DIR__ . '/../view',
+            'CroBlog' => __DIR__ . '/../view',
         ),
     ),
 );
