@@ -43,4 +43,23 @@ class BlogController extends AbstractActionController
             'posts' => $this->blogService->getPosts(),
         );
     }
+
+    /**
+     * Shows a specific blog post.
+     */
+    public function postAction()
+    {
+        $slug = $this->params()->fromRoute('slug');
+        $post = $this->blogService->getPostBySlug($slug);
+
+        if (!$post)
+        {
+            $this->getResponse()->setStatusCode(404);
+            return;
+        }
+
+        return array(
+            'post' => $post,
+        );
+    }
 }
